@@ -1,0 +1,124 @@
+{
+  "machines": [
+    {
+      "container": "firekube-node0",
+      "state": "Running",
+      "spec": {
+        "name": "node%d",
+        "image": "weaveworks/ignite-centos:firekube-pre3",
+        "portMappings": [
+          {
+            "hostPort": 2222,
+            "containerPort": 22
+          },
+          {
+            "hostPort": 6443,
+            "containerPort": 6443
+          },
+          {
+            "hostPort": 30443,
+            "containerPort": 30443
+          },
+          {
+            "hostPort": 30080,
+            "containerPort": 30080
+          }
+        ],
+        "backend": "ignite",
+        "ignite": {
+          "cpus": 2,
+          "memory": "1GB",
+          "diskSize": "5GB",
+          "kernel": "weaveworks/ignite-kernel:4.19.47"
+        }
+      },
+      "ports": [
+        {
+          "guest": 22,
+          "host": 2222
+        },
+        {
+          "guest": 6443,
+          "host": 6443
+        },
+        {
+          "guest": 30443,
+          "host": 30443
+        },
+        {
+          "guest": 30080,
+          "host": 30080
+        }
+      ],
+      "hostname": "node0",
+      "image": "weaveworks/ignite-centos:firekube-pre3",
+      "cmd": "",
+      "ip": "",
+      "runtimeNetworks": [
+        {
+          "ip": "10.61.0.2"
+        }
+      ]
+    },
+    {
+      "container": "firekube-node1",
+      "state": "Running",
+      "spec": {
+        "name": "node%d",
+        "image": "weaveworks/ignite-centos:firekube-pre3",
+        "portMappings": [
+          {
+            "hostPort": 2222,
+            "containerPort": 22
+          },
+          {
+            "hostPort": 6443,
+            "containerPort": 6443
+          },
+          {
+            "hostPort": 30443,
+            "containerPort": 30443
+          },
+          {
+            "hostPort": 30080,
+            "containerPort": 30080
+          }
+        ],
+        "backend": "ignite",
+        "ignite": {
+          "cpus": 2,
+          "memory": "1GB",
+          "diskSize": "5GB",
+          "kernel": "weaveworks/ignite-kernel:4.19.47"
+        }
+      },
+      "ports": [
+        {
+          "guest": 30080,
+          "host": 30081
+        },
+        {
+          "guest": 22,
+          "host": 2223
+        },
+        {
+          "guest": 6443,
+          "host": 6444
+        },
+        {
+          "guest": 30443,
+          "host": 30444
+        }
+      ],
+      "hostname": "node1",
+      "image": "weaveworks/ignite-centos:firekube-pre3",
+      "cmd": "",
+      "ip": "",
+      "runtimeNetworks": [
+        {
+          "ip": "10.61.0.3"
+        }
+      ]
+    }
+  ]
+}
