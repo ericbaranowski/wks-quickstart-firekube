@@ -1,5 +1,5 @@
-apiVersion: sigs.k8s.io/cluster-api/api/v1alpha4
-kind: NestedCluster
+apiVersion: "cluster.x-k8s.io/v1alpha3"
+kind: Cluster
 metadata:
   name: example
 spec:
