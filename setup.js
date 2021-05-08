@@ -75,7 +75,7 @@ const List = items => ({
 
 // Machine returns a WKS machine description from a configuration object describing its public IP, private IP, id, and its role.
 const Machine = ({ id, privateIP, sshPort, role }) => ({
-  apiVersion: 'cluster.k8s.io/v1alpha1',
+  apiVersion: 'cluster.k8s.io/v1alpha2',
   kind: 'Machine',
   metadata: {
     labels: {

@@ -22,7 +22,7 @@ set -euo pipefail
 JK_VERSION=0.3.0
 FOOTLOOSE_VERSION=0.6.3
 IGNITE_VERSION=0.7.1
-WKSCTL_VERSION=0.8.4
+WKSCTL_VERSION=0.10.2
 
 config_backend() {
     sed -n -e 's/^backend: *\(.*\)/\1/p' config.yaml
@@ -51,7 +51,7 @@ else
 fi
 
 git_remote="$(git config --get "branch.$(git_current_branch).remote" || true)" # fallback to "", user may override
-git_deploy_key=""
+git_deploy_key="deploy-firekube"
 download="yes"
 download_force="no"
 
@@ -137,7 +137,7 @@ check_version wksctl "${WKSCTL_VERSION}"
 log "Creating footloose manifest"
 jk generate -f config.yaml setup.js
 
-cluster_key="cluster-key"
+cluster_key="deploy-firecube"
 if [ ! -f "${cluster_key}" ]; then
     # Create the cluster ssh key with the user credentials.
     log "Creating SSH key"
